@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Prog/ProgMode.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Run/RunMode.tscn" type="PackedScene" id=2]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 512, 296 )
+current = true
+
+[node name="TabContainer" type="TabContainer" parent="."]
+margin_top = -5.0
+margin_right = 1032.0
+margin_bottom = 595.0
+
+[node name="Program" type="Control" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Prog" parent="TabContainer/Program" instance=ExtResource( 1 )]
+
+[node name="Run" type="ViewportContainer" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Viewport" type="Viewport" parent="TabContainer/Run"]
+size = Vector2( 1000, 500 )
+handle_input_locally = false
+msaa = 2
+usage = 3
+render_target_update_mode = 0
+
+[node name="RunMode" parent="TabContainer/Run/Viewport" instance=ExtResource( 2 )]
