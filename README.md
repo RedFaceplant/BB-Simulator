@@ -5,11 +5,11 @@ This is a Godot project for FRC team The Byting Bulldog's programmers. This is a
 
 <b> Currently not designed for public release </b>
 
-
+<br>
+<br>
 
 This project uses the Gihub Intergration plug in:<br>
 <------------------------------------------------>
-
 # GitHub Integration
 A complete GitHub integration for your Godot Editor! Manage your project without even opening your browser.
 
