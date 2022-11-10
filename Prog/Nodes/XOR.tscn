@@ -5,7 +5,7 @@
 [node name="XOR" type="GraphNode"]
 margin_right = 150.0
 margin_bottom = 75.0
-title = "And"
+title = "Xor"
 slot/0/left_enabled = true
 slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
