@@ -4,11 +4,22 @@ var selected_nodes = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
+# Creates a new node
+func makeNewNode(nodeType, position):
+	var newNode = load("res://Prog/Nodes/"+nodeType+".tscn").instance()
+	self.add_child(newNode)
+	newNode.offset = position
+
+
+func _spawnButton(type): # Comes from the sidebar buttons
+	makeNewNode(type, Vector2(100,100))
+
+
+func _on_DeleteButton_down():
+	_on_Graph_delete_nodes_request()
 
 
 # Handles connections
@@ -18,7 +29,7 @@ func _on_Graph_connection_request(from, from_slot, to, to_slot):
 		if c.to == to and c.to_port == to_slot:
 			return
 			
-	self.connect_node(from, from_slot, to, to_slot)
+	var _dumpVar = self.connect_node(from, from_slot, to, to_slot)
 	var nodeA = self.get_node(from)
 	var nodeB = self.get_node(to)
 	nodeA.connect("Wire", nodeB, "_wire")
@@ -48,6 +59,7 @@ func _on_Graph_delete_nodes_request():
 			remove_node_connections(node)
 			node.queue_free()
 	selected_nodes = {}
+
 
 func remove_node_connections(node):
 	for c in self.get_connection_list():
