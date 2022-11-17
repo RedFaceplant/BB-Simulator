@@ -2,8 +2,7 @@ extends GraphNode
 
 signal Wire(x, p)
 
-var A = false
-var B = false
+var A = 0
 var port
 
 # Called when the node enters the scene tree for the first time.
