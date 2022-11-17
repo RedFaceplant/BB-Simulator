@@ -13,7 +13,7 @@ current = true
 
 [node name="TabContainer" type="TabContainer" parent="."]
 margin_top = -5.0
-margin_right = 1032.0
+margin_right = 1024.0
 margin_bottom = 595.0
 
 [node name="Program" type="Control" parent="TabContainer"]
@@ -25,6 +25,7 @@ margin_right = -4.0
 margin_bottom = -4.0
 
 [node name="Prog" parent="TabContainer/Program" instance=ExtResource( 1 )]
+margin_right = 1020.0
 
 [node name="Run" type="ViewportContainer" parent="TabContainer"]
 visible = false
