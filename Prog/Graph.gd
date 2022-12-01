@@ -9,9 +9,14 @@ func _ready():
 
 # Creates a new node
 func makeNewNode(nodeType, position):
-	var newNode = load("res://Prog/Nodes/"+nodeType+".tscn").instance()
-	self.add_child(newNode)
-	newNode.offset = position
+	var path = load("res://Prog/Nodes/"+nodeType+".tscn")
+	if path == null:
+		push_error("Node '"+ nodeType+ "' not found!")
+		get_tree().paused = true
+	else:
+		var newNode = load("res://Prog/Nodes/"+nodeType+".tscn").instance()
+		self.add_child(newNode)
+		newNode.offset = position
 
 
 func _spawnButton(type): # Comes from the sidebar buttons
