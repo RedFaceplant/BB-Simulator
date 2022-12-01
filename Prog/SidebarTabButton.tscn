@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Prog/SidebarTabButton.gd" type="Script" id=1]
+
+[node name="SidebarTabButton" type="Button"]
+margin_left = 472.0
+margin_right = 532.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 60, 0 )
+text = "Logic"
+script = ExtResource( 1 )
+
+[connection signal="button_down" from="." to="." method="_on_SidebarTabButton_button_down"]

@@ -11,7 +11,7 @@ slot/0/left_type = 0
 slot/0/left_color = Color( 1, 1, 1, 1 )
 slot/0/right_enabled = true
 slot/0/right_type = 0
-slot/0/right_color = Color( 1, 1, 1, 1 )
+slot/0/right_color = Color( 0.133333, 0.133333, 1, 1 )
 script = ExtResource( 1 )
 
 [node name="CheckButton" type="CheckButton" parent="."]
