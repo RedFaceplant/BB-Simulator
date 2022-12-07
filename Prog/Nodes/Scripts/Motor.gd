@@ -10,7 +10,7 @@ func _ready():
 	self.connect("Motor", get_parent().get_parent(), "_motor")
 
 func _wire(x, _p):
-	var motorPower = wrapf(x, 0.0, 1.0)
+	var motorPower = clamp(x, -1.0, 1.0)
 	emit_signal("Motor", {"motorName": Motor, "power": motorPower})
 
 
