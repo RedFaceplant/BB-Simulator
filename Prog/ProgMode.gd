@@ -2,9 +2,9 @@ extends Control
 
 signal TheVariables(value)
 
-const nodesLogic = ["And", "Or", "Not", "XOR", "SR Latch"]
+const nodesLogic = ["AND", "OR", "NOT", "XOR", "SR Latch"]
 const nodesInput = ["Joystick", "Custom Value", "Switch"]
-const nodesMath = ["Add", "Subtract", "Multiply", "Divide", "Abs"]
+const nodesMath = ["Add", "Subtract", "Multiply", "Divide", "Abs", "Exponent", "Root", "Trigonometry", "Math Const"]
 const nodesDebug = ["Bulb", "Display", "Gauge"]
 const nodesConvert = [] #Temp until nodes added
 

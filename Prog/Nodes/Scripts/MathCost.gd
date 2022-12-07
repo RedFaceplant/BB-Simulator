@@ -1,11 +1,10 @@
 extends GraphNode
 
 signal Wire(x, p)
-const optionsArray = ["Sin", "Cos", "Tan", "Arcsin", "Arccos", "Arctan"]
+const optionsArray = ["Pi", "e", "BB", "c"]
+const functionsArray = [PI, exp(1), 3539, 299792458]
 
 var port
-var A = 0
-var functionsArray
 
 
 func _ready():
@@ -15,13 +14,7 @@ func _ready():
 		i += 1
 
 
-func _wire(x, _p):
-		A = x
-		updateOutput()
-
-
 func updateOutput():
-	functionsArray = [sin(A),cos(A),tan(A),asin(A),acos(A),atan(A)]
 	var output = functionsArray[$OptionButton.selected]
 	emit_signal("Wire", output, port)
 

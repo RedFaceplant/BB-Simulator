@@ -2,8 +2,6 @@ extends GraphNode
 
 signal Wire(x, p)
 
-var A = 0
-var B = 0
 var port
 
 
@@ -11,22 +9,10 @@ func _ready():
 	pass # Replace with function body.
 
 
-func updateOutput():
-	var output = A * B
-	emit_signal("Wire", output, port)
-
-
-func _wire(x, p):
-	match p:
-		0:
-			A = x
-		1:
-			B = x
-		_:
-			return
-	updateOutput()
-
-
 #used to store the port number, therefore multiple signals can come from different ports.
 func flashPort(p):
 	port = p
+
+
+func _on_CheckButton_text_changed(new_text):
+	emit_signal("Wire", float(new_text), port)
