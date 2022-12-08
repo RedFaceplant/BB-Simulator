@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Prog/ProgMode.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Run/RunMode.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Build/BuildMode.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -16,7 +17,18 @@ margin_top = -5.0
 margin_right = 1024.0
 margin_bottom = 595.0
 
+[node name="Build" type="Control" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Build Mode" parent="TabContainer/Build" instance=ExtResource( 3 )]
+
 [node name="Program" type="Control" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -27,7 +39,7 @@ margin_bottom = -4.0
 [node name="Prog" parent="TabContainer/Program" instance=ExtResource( 1 )]
 margin_right = 1020.0
 
-[node name="Run" type="ViewportContainer" parent="TabContainer"]
+[node name="Run" type="Control" parent="TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -36,11 +48,43 @@ margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="Viewport" type="Viewport" parent="TabContainer/Run"]
-size = Vector2( 1000, 500 )
+[node name="VeiwportContainer" type="ViewportContainer" parent="TabContainer/Run"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 5.0
+margin_right = -8.0
+margin_bottom = -79.0
+
+[node name="Viewport" type="Viewport" parent="TabContainer/Run/VeiwportContainer"]
+size = Vector2( 1000, 480 )
 handle_input_locally = false
 msaa = 2
 usage = 3
 render_target_update_mode = 0
 
-[node name="RunMode" parent="TabContainer/Run/Viewport" instance=ExtResource( 2 )]
+[node name="RunMode" parent="TabContainer/Run/VeiwportContainer/Viewport" instance=ExtResource( 2 )]
+
+[node name="DriverStation" type="Control" parent="TabContainer/Run"]
+margin_left = 60.0
+margin_top = 493.0
+margin_right = 956.0
+margin_bottom = 557.0
+
+[node name="ColorRect" type="ColorRect" parent="TabContainer/Run/DriverStation"]
+margin_left = -8.0
+margin_right = 904.0
+margin_bottom = 64.0
+color = Color( 0.356863, 0.356863, 0.356863, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Run/DriverStation"]
+margin_right = 896.0
+margin_bottom = 64.0
+
+[node name="Enabled" type="CheckButton" parent="TabContainer/Run/DriverStation/HBoxContainer"]
+margin_right = 134.0
+margin_bottom = 64.0
+text = "Enabled:"
+
+[connection signal="TheVariables" from="TabContainer/Program/Prog" to="TabContainer/Run/VeiwportContainer/Viewport/RunMode" method="_incoming_motors"]
+[connection signal="toggled" from="TabContainer/Run/DriverStation/HBoxContainer/Enabled" to="TabContainer/Run/VeiwportContainer/Viewport/RunMode" method="_on_Enabled_toggled"]

@@ -13,8 +13,8 @@ onready var button = load("res://Prog/SidebarNode.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if get_parent().name == "Program":
-		var _dumpVar = self.connect("TheVariables", get_tree().get_root().get_node("./Main/TabContainer/Run/Viewport/RunMode"), "_incoming_motors")
+	if not get_parent().name == "Program":
+		print("Not outputting motors!")
 	
 	for l in nodesLogic:
 		var newButton = button.instance()

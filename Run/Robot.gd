@@ -3,6 +3,8 @@ extends KinematicBody
 var theArray = []
 var justNames = []
 
+var enabled = false
+
 # How fast the player moves in meters per second.
 export var speed = 50
 # The downward acceleration when in the air, in meters per second squared.
@@ -14,26 +16,29 @@ var velocity = Vector3.ZERO
 func _ready():
 	pass # Replace with function body.
 
+# This still needs momentum added to it
 func _physics_process(delta):
 	# We create a local variable to store the input direction.
-	var forwardForce
-	var rotateForce
-	var leftMotor
-	var rightMotor
-	# We check for each move input and update the direction accordingly.
-	var checkRight = justNames.find("Right")
-	if checkRight != -1:
-		rightMotor = theArray[checkRight].power
-	else:
-		rightMotor = 0.0
-	var checkLeft = justNames.find("Left")
-	if checkLeft != -1:
-		leftMotor = theArray[checkLeft].power
-	else:
-		leftMotor = 0.0
+	var forwardForce = 0
+	var rotateForce = 0
+	var leftMotor = 0
+	var rightMotor = 0
 	
-	forwardForce = (leftMotor + rightMotor)/2
-	rotateForce = (leftMotor - rightMotor)/32
+	if enabled:
+		# We check for each move input and update the direction accordingly.
+		var checkRight = justNames.find("Right")
+		if checkRight != -1:
+			rightMotor = theArray[checkRight].power
+		else:
+			rightMotor = 0.0
+		var checkLeft = justNames.find("Left")
+		if checkLeft != -1:
+			leftMotor = theArray[checkLeft].power
+		else:
+			leftMotor = 0.0
+		
+		forwardForce = (leftMotor + rightMotor)/2
+		rotateForce = (leftMotor - rightMotor)/32
 	
 	# Ground velocity
 	velocity.x = sin(self.rotation.y - PI/2) * forwardForce * speed
@@ -41,8 +46,6 @@ func _physics_process(delta):
 	# Lateral movement
 	velocity = move_and_slide(velocity, Vector3.UP)
 	rotate_y(rotateForce)
-	
-	#Roational velocity
 
 
 func _on_RunMode_passing(obj2):
