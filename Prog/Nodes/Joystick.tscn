@@ -13,7 +13,6 @@ slot/0/right_enabled = true
 slot/0/right_type = 0
 slot/0/right_color = Color( 0.133333, 1, 0.133333, 1 )
 script = ExtResource( 1 )
-EnableJoystick = false
 
 [node name="OptionButton" type="OptionButton" parent="."]
 margin_left = 16.0

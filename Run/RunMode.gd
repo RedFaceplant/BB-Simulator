@@ -2,13 +2,14 @@ extends Spatial
 
 signal passing(obj2)
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 func _incoming_motors(obj):
 	emit_signal("passing", obj)
+
+
+func _on_Enabled_toggled(button_state):
+	$Robot.enabled = button_state

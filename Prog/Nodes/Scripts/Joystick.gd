@@ -26,7 +26,7 @@ func flashPort(p):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if EnableJoystick:
-		match funniArray[$OptionButton.selected]: #Get the selected option
+		match JoystickArray[$OptionButton.selected]: #Get the selected option
 			"LeftStickY":
 				joystickValue = Input.get_axis("0-LeftStickU", "0-LeftStickD")
 			"LeftStickX":
@@ -37,9 +37,7 @@ func _process(delta):
 				joystickValue = Input.get_axis("0-RightStickL", "0-RightStickR")
 			_:
 				joystickValue = null
-
 		joystickValue = stepify(joystickValue, 0.1) #Rounds to 1 decimal place
-
 		if preValue != joystickValue:
 			preValue = joystickValue
 			updateSignal(joystickValue)
