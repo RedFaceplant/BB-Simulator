@@ -5,7 +5,7 @@ signal TheVariables(value)
 const nodesLogic = ["AND", "OR", "NOT", "XOR", "SR Latch"]
 const nodesInput = ["Joystick", "Custom Value", "Switch"]
 const nodesMath = ["Add", "Subtract", "Multiply", "Divide", "Abs", "Exponent", "Root", "Trigonometry", "Math Const"]
-const nodesDebug = ["Bulb", "Display", "Gauge"]
+const nodesDebug = ["Bulb", "Display", "Gauge", "ToBoolean", "ToFloat"]
 const nodesConvert = [] #Temp until nodes added
 
 onready var button = load("res://Prog/SidebarNode.tscn")
