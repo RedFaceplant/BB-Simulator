@@ -4,7 +4,7 @@
 
 [node name="Not" type="GraphNode"]
 margin_right = 150.0
-margin_bottom = 75.0
+margin_bottom = 64.0
 title = "Not"
 slot/0/left_enabled = true
 slot/0/left_type = 0

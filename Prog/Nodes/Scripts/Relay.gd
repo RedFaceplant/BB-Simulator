@@ -2,20 +2,20 @@ extends GraphNode
 
 signal Wire(x, p)
 
-var Latch = false
-var Wire = false
+var Coil = false
+var Through = false
 var Out = false
 var port
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	updateOutput()
+	pass
 
 
 func updateOutput():
-	if Latch:
-		Out = Wire
-	elif not Latch:
+	if Coil:
+		Out = Through
+	else:
 		Out = false
 	emit_signal("Wire", Out, port)
 
@@ -23,14 +23,15 @@ func updateOutput():
 func _wire(x, p):
 	match p:
 		0:
-			Latch = x
+			Coil = x
 		1:
-			Wire = x
+			Through = x
 		_:
 			return
 	updateOutput()
 
 
-#used to store the port number, therefore multiple signals can come from different ports.
+# Used to store the port number, therefore multiple signals can come from different ports.
 func flashPort(p):
 	port = p
+	updateOutput()

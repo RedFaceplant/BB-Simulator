@@ -1,12 +1,13 @@
 extends Control
 
 signal TheVariables(value)
+signal PrintNewLine(text)
 
-const nodesLogic = ["AND", "OR", "NOT", "XOR", "SR Latch"]
-const nodesInput = ["Joystick", "Custom Value", "Switch"]
-const nodesMath = ["Add", "Subtract", "Multiply", "Divide", "Abs", "Exponent", "Root", "Trigonometry", "Math Const"]
-const nodesDebug = ["Bulb", "Display", "Gauge", "ToBoolean", "ToFloat"]
-const nodesConvert = [] #Temp until nodes added
+const nodesLogic = ["AND", "OR", "NOT", "XOR", "Relay", "Equal To", "Greater Than", "Less Than", "SR Latch"]
+const nodesInput = ["Joystick", "Custom Value", "Switch", "Key Press", "Slider"]
+const nodesMath = ["Add", "Subtract", "Multiply", "Divide", "Abs", "Exponent", "Root", "Trigonometry", "Math Const", "Clamp", "Round"]
+const nodesDebug = ["Bulb", "Display", "Gauge", "Terminal Print"]
+const nodesConvert = ["Convert Angle", "ToBoolean", "ToFloat", "ToInteger", "ToString"]
 
 onready var button = load("res://Prog/SidebarNode.tscn")
 
@@ -36,11 +37,15 @@ func _ready():
 		$Sidebar/InputTab/Vbox.add_child(newButton)
 		newButton.buttonSetup(i, $Graph)
 	
-#	for c in nodesConvert:
-#		var newButton = button.instance()
-#		$Sidebar/ConvertTab/Vbox.add_child(newButton)
-#		newButton.buttonSetup(c, $Graph)
+	for c in nodesConvert:
+		var newButton = button.instance()
+		$Sidebar/ConvertTab/Vbox.add_child(newButton)
+		newButton.buttonSetup(c, $Graph)
 
 
 func _motor(obj):
 	emit_signal("TheVariables", obj)
+
+
+func _print(text):
+	emit_signal("PrintNewLine", text)

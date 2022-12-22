@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Prog/ProgMode.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Run/Run.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Build/BuildMode.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Run/Run.gd" type="Script" id=4]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -34,4 +33,6 @@ margin_bottom = 600.0
 
 [node name="Run" parent="TabContainer" instance=ExtResource( 2 )]
 visible = false
-script = ExtResource( 4 )
+
+[connection signal="PrintNewLine" from="TabContainer/Program" to="TabContainer/Run" method="_on_Program_PrintNewLine"]
+[connection signal="TheVariables" from="TabContainer/Program" to="TabContainer/Run" method="_on_Program_TheVariables"]
