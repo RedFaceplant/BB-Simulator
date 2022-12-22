@@ -147,6 +147,21 @@ margin_bottom = 564.0
 rect_min_size = Vector2( 90, 564 )
 custom_constants/separation = 20
 
+[node name="ConvertTab" type="ScrollContainer" parent="Sidebar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 18.0
+margin_top = -24.0
+margin_right = 128.0
+margin_bottom = 520.0
+scroll_horizontal_enabled = false
+
+[node name="Vbox" type="VBoxContainer" parent="Sidebar/ConvertTab"]
+margin_right = 90.0
+margin_bottom = 564.0
+rect_min_size = Vector2( 90, 564 )
+custom_constants/separation = 20
+
 [connection signal="connection_request" from="Graph" to="Graph" method="_on_Graph_connection_request"]
 [connection signal="delete_nodes_request" from="Graph" to="Graph" method="_on_Graph_delete_nodes_request"]
 [connection signal="disconnection_request" from="Graph" to="Graph" method="_on_Graph_disconnection_request"]

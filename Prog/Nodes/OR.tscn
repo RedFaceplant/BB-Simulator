@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Prog/Nodes/Or.gd" type="Script" id=1]
+[ext_resource path="res://Prog/Nodes/Scripts/Or.gd" type="Script" id=1]
 
 [node name="Or" type="GraphNode"]
 margin_right = 150.0
@@ -8,7 +8,7 @@ margin_bottom = 75.0
 title = "Or"
 slot/0/left_enabled = true
 slot/0/left_type = 0
-slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/left_color = Color( 0.133333, 0.133333, 1, 1 )
 slot/0/right_enabled = false
 slot/0/right_type = 0
 slot/0/right_color = Color( 1, 1, 1, 1 )
@@ -17,10 +17,10 @@ slot/1/left_type = 0
 slot/1/left_color = Color( 1, 1, 1, 1 )
 slot/1/right_enabled = true
 slot/1/right_type = 0
-slot/1/right_color = Color( 1, 1, 1, 1 )
+slot/1/right_color = Color( 0.133333, 0.133333, 1, 1 )
 slot/2/left_enabled = true
 slot/2/left_type = 0
-slot/2/left_color = Color( 1, 1, 1, 1 )
+slot/2/left_color = Color( 0.133333, 0.133333, 1, 1 )
 slot/2/right_enabled = false
 slot/2/right_type = 0
 slot/2/right_color = Color( 1, 1, 1, 1 )
@@ -38,7 +38,7 @@ margin_left = 16.0
 margin_top = 40.0
 margin_right = 134.0
 margin_bottom = 54.0
-text = "OR"
+text = "A || B"
 align = 1
 valign = 1
 
