@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Old Tank Chassis.obj-4eb4ca8c724e97c055d0e726619c5fdd.mesh"
+
+[deps]
+
+files=[ "res://.import/Old Tank Chassis.obj-4eb4ca8c724e97c055d0e726619c5fdd.mesh" ]
+
+source_file="res://Models/Old Tank Chassis.obj"
+dest_files=[ "res://.import/Old Tank Chassis.obj-4eb4ca8c724e97c055d0e726619c5fdd.mesh", "res://.import/Old Tank Chassis.obj-4eb4ca8c724e97c055d0e726619c5fdd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

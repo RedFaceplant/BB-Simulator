@@ -26,6 +26,7 @@ margin_right = 850.0
 margin_bottom = 125.0
 mouse_filter = 1
 offset = Vector2( 700, 50 )
+Motor = "FrontLeft"
 
 [node name="Motor2" parent="Graph" instance=ExtResource( 7 )]
 margin_left = 700.0
@@ -34,7 +35,7 @@ margin_right = 850.0
 margin_bottom = 225.0
 mouse_filter = 1
 offset = Vector2( 700, 150 )
-Motor = "Right"
+Motor = "FrontRight"
 
 [node name="DeleteButton" type="ToolButton" parent="."]
 margin_left = 392.0

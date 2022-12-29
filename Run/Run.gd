@@ -11,3 +11,7 @@ func _on_Program_TheVariables(value):
 
 func _on_Program_PrintNewLine(text):
 	$DriverStation.addPrintLine(text)
+
+
+func _on_Build_drivetrainUpdate(dt):
+	pass # Replace with function body.

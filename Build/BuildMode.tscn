@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Build/BuildMode.gd" type="Script" id=1]
-[ext_resource path="res://Art/TankChassis 1.png" type="Texture" id=2]
+[ext_resource path="res://Art/6W Tank.png" type="Texture" id=2]
 
 [node name="Build Mode" type="Control"]
 script = ExtResource( 1 )
@@ -13,8 +13,8 @@ margin_bottom = 568.0
 color = Color( 0.372549, 0.372549, 0.372549, 1 )
 
 [node name="Drivetrain" type="Sprite" parent="."]
-position = Vector2( 512, 336 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 512, 320 )
+scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 2 )
 
 [node name="LeftSidebar" type="Control" parent="."]
@@ -74,6 +74,13 @@ margin_bottom = 312.0
 text = "Space reserved for dropdown menus with various options."
 autowrap = true
 
+[node name="Button" type="Button" parent="RightSidebar"]
+margin_top = 512.0
+margin_right = 144.0
+margin_bottom = 539.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "UPDATE DRIVETRAIN"
+
 [node name="Title" type="Label" parent="."]
 margin_left = 288.0
 margin_top = 16.0
@@ -84,3 +91,5 @@ text = "HOLONOMIC"
 align = 1
 valign = 1
 uppercase = true
+
+[connection signal="button_down" from="RightSidebar/Button" to="." method="_on_Button_button_down"]
