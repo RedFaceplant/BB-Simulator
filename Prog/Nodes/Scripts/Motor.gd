@@ -7,7 +7,7 @@ export var Motor = "Left"
 
 func _ready():
 	$Label.text = str(Motor, " Motor")
-	self.connect("Motor", get_parent().get_parent(), "_motor")
+	var _dummyVal = self.connect("Motor", get_parent().get_parent(), "_motor")
 
 
 func _wire(x, _p):

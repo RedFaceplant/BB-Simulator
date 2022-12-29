@@ -1,11 +1,12 @@
 extends Control
 
-const drivetrains = ["6W Tank", "Holonomic", "Mechanum", "Swerve"]
+signal drivetrainUpdate(dt)
+
+const drivetrains = ["6W Tank", "Mecanum", "Swerve"] #"Holonomic"
 
 var selected = drivetrains[0]
 
 onready var dtButton = load("res://Build/DrivetrainButton.tscn")
-
 
 func _ready():
 	for dt in drivetrains:
@@ -21,5 +22,10 @@ func _updateDrivetrain(type):
 		b.disabled = b.getDrivetrain == selected
 	$LeftSidebar/LabelSelected.text = str("Selected: ", selected)
 	$Title.text = selected
-	#Update Texture
-	#Update Description
+	$Drivetrain.texture = load("res://Art/"+selected+".png")
+	# Update Description
+
+
+func _on_Button_button_down():
+	get_parent().selectedDrivetrain = selected
+	emit_signal("drivetrainUpdate", selected)

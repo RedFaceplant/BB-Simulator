@@ -49,3 +49,7 @@ func _motor(obj):
 
 func _print(text):
 	emit_signal("PrintNewLine", text)
+
+
+func _on_Build_drivetrainUpdate(dt):
+	pass # Replace with function body.

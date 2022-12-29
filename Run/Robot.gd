@@ -4,6 +4,7 @@ var theArray = []
 var justNames = []
 
 var enabled = false
+var currDT = "6W Tank"
 
 # How fast the player moves in meters per second.
 export var speed = 50
@@ -16,33 +17,35 @@ var velocity = Vector3.ZERO
 func _ready():
 	pass # Replace with function body.
 
+
 # This still needs momentum added to it
-func _physics_process(delta):
+func _physics_process(_delta):
 	# We create a local variable to store the input direction.
-	var forwardForce = 0
-	var rotateForce = 0
-	var leftMotor = 0
-	var rightMotor = 0
+	var motors = [{"Name": "FrontLeft", "Power": 0},
+				{"Name": "FrontRight", "Power": 0}]
+	
+	var forwardForce = 0.0
+	var rotateForce = 0.0
+	var strafeForce = 0.0
 	
 	if enabled:
-		# We check for each move input and update the direction accordingly.
-		var checkRight = justNames.find("Right")
-		if checkRight != -1:
-			rightMotor = theArray[checkRight].power
-		else:
-			rightMotor = 0.0
-		var checkLeft = justNames.find("Left")
-		if checkLeft != -1:
-			leftMotor = theArray[checkLeft].power
-		else:
-			leftMotor = 0.0
+		for m in motors:
+			var location = justNames.find(m.Name)
+			if location != -1:
+				m.Power = theArray[location].power
+			else:
+				m.Power = 0.0
 		
-		forwardForce = (leftMotor + rightMotor)/2
-		rotateForce = (leftMotor - rightMotor)/32
+		match currDT:
+			"6W Tank":
+				forwardForce = (motors[0].Power + motors[1].Power)/2
+				rotateForce = (motors[0].Power - motors[1].Power)/32
+				strafeForce = 0.0
 	
 	# Ground velocity
 	velocity.x = sin(self.rotation.y - PI/2) * forwardForce * speed
 	velocity.z = cos(self.rotation.y - PI/2) * forwardForce * speed
+	
 	# Lateral movement
 	velocity = move_and_slide(velocity, Vector3.UP)
 	rotate_y(rotateForce)

@@ -25,7 +25,6 @@ margin_bottom = -79.0
 size = Vector2( 1000, 480 )
 handle_input_locally = false
 msaa = 2
-usage = 3
 render_target_update_mode = 3
 
 [node name="RunMode" parent="VeiwportContainer/Viewport" instance=ExtResource( 1 )]
