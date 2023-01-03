@@ -1,4 +1,5 @@
 extends GraphNode
+const type = "Add"
 
 signal Wire(x, p)
 
