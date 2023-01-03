@@ -5,6 +5,7 @@ signal drivetrainUpdate(dt)
 const drivetrains = ["6W Tank", "Mecanum", "Swerve"] #"Holonomic"
 
 var selected = drivetrains[0]
+const drivetrain_Descriptons = ["6W Tank desc", "Mecanum desc", "Swerve desc"]
 
 onready var dtButton = load("res://Build/DrivetrainButton.tscn")
 
@@ -19,11 +20,11 @@ func _ready():
 func _updateDrivetrain(type):
 	selected = type
 	for b in $LeftSidebar/DrivetrainSelection/Vbox.get_children():
-		b.disabled = b.getDrivetrain == selected
+		b.disabled = b.getDrivetrain  == selected
 	$LeftSidebar/LabelSelected.text = str("Selected: ", selected)
 	$Title.text = selected
 	$Drivetrain.texture = load("res://Art/"+selected+".png")
-	# Update Description
+	$LeftSidebar/Desc.text = drivetrain_Descriptons[drivetrains.find(selected)]
 
 
 func _on_Button_button_down():
