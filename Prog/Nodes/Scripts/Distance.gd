@@ -5,8 +5,13 @@ const optionsArray = ["meter", "miles", "km", "mm", "cm", "feet", "inches"]
 
 var port
 var A = 0
-var meter
-var convert_table
+const meter = {"mm": 1000,
+			"cm": 100,
+			"meter": 1,
+			"km": 0.001,
+			"inches": 39.3701,
+			"miles": 0.000621371,
+			"feet": 3.28084}
 
 
 func _ready():
@@ -18,21 +23,7 @@ func _ready():
 
 
 func convert_dist(length, unit_in, unit_out):
-	meter = {"mm": 1000,
-			"cm": 100,
-			"meter": 1,
-			"km": 0.001,
-			"inches": 39.3701,
-			"miles": 0.000621371,
-			"feet": 3.28084}
-
-	if unit_out == "":
-		convert_table = meter
-		for x in meter:
-			convert_table[x] = (length / meter[unit_in]) * convert_table[x]
-		return meter
-	else:
-		return (length / meter[unit_in]) * meter[unit_out]
+	return (length / meter[unit_in]) * meter[unit_out]
 
 
 func _wire(x, p):
