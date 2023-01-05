@@ -1,5 +1,6 @@
 extends GraphNode
 const type = "Add"
+export var data = {}
 
 signal Wire(x, p)
 

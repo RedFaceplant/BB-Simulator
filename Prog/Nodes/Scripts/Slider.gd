@@ -1,5 +1,6 @@
 extends GraphNode
-
+const type = "Slider"
+export var data = {}
 signal Wire(x, p)
 
 var port

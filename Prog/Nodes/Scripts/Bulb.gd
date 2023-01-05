@@ -1,5 +1,6 @@
 extends GraphNode
-
+const type = "Bulb"
+export var data = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
