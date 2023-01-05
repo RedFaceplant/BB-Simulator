@@ -5,7 +5,6 @@
 [node name="Abs" type="GraphNode"]
 margin_right = 150.0
 margin_bottom = 75.0
-rect_rotation = 1.44933
 title = "Abs"
 slot/0/left_enabled = true
 slot/0/left_type = 0

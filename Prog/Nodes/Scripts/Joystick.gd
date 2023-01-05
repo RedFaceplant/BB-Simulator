@@ -9,6 +9,7 @@ var port
 var joystickValue
 var preValue
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var i = 0
@@ -16,12 +17,15 @@ func _ready():
 		$OptionButton.add_item(a, i)
 		i += 1
 
+
 func updateSignal(value):
 	emit_signal("Wire", value, port)
+
 
 # Used to store the port number, therefore multiple signals can come from different ports.
 func flashPort(p):
 	port = p
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

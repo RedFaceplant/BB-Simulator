@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Build/BuildMode.gd" type="Script" id=1]
-[ext_resource path="res://Art/6W Tank.png" type="Texture" id=2]
+[ext_resource path="res://Art/Sweve Wheel.png" type="Texture" id=2]
+[ext_resource path="res://Art/Swerve.png" type="Texture" id=3]
 
 [node name="Build Mode" type="Control"]
 script = ExtResource( 1 )
@@ -15,6 +16,12 @@ color = Color( 0.372549, 0.372549, 0.372549, 1 )
 [node name="Drivetrain" type="Sprite" parent="."]
 position = Vector2( 512, 320 )
 scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 3 )
+
+[node name="Wheel" type="Sprite" parent="."]
+visible = false
+position = Vector2( 672, 456 )
+scale = Vector2( 0.0626276, 0.061344 )
 texture = ExtResource( 2 )
 
 [node name="LeftSidebar" type="Control" parent="."]
@@ -24,8 +31,9 @@ margin_bottom = 568.0
 
 [node name="LabelSelect" type="Label" parent="LeftSidebar"]
 margin_top = 8.0
-margin_right = 208.0
+margin_right = 110.0
 margin_bottom = 24.0
+rect_scale = Vector2( 2, 2 )
 text = "Select Drivetrain:"
 align = 1
 valign = 1
@@ -34,8 +42,9 @@ valign = 1
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
-margin_top = 32.0
-margin_bottom = -336.0
+margin_top = 48.0
+margin_right = 2.0
+margin_bottom = -216.0
 scroll_horizontal_enabled = false
 
 [node name="Vbox" type="VBoxContainer" parent="LeftSidebar/DrivetrainSelection"]
@@ -45,17 +54,18 @@ rect_min_size = Vector2( 190, 200 )
 custom_constants/separation = 20
 
 [node name="LabelSelected" type="Label" parent="LeftSidebar"]
-margin_left = 8.0
-margin_top = 240.0
-margin_right = 200.0
-margin_bottom = 254.0
+margin_left = -8.0
+margin_top = 360.0
+margin_right = 141.0
+margin_bottom = 374.0
+rect_scale = Vector2( 1.5, 1.5 )
 text = "Selected: None"
 align = 1
 valign = 1
 
 [node name="Desc" type="Label" parent="LeftSidebar"]
 margin_left = 8.0
-margin_top = 272.0
+margin_top = 392.0
 margin_right = 200.0
 margin_bottom = 560.0
 text = "This is alot of open space. I'd like to put some descriptons here that match the selected Drivetrain, but I haven't gotten around to programming it yet."
@@ -71,13 +81,21 @@ margin_left = 8.0
 margin_top = 24.0
 margin_right = 200.0
 margin_bottom = 312.0
-text = "Space reserved for dropdown menus with various options."
+text = "Space reserved for future content"
+autowrap = true
+
+[node name="Unavailable" type="Label" parent="RightSidebar"]
+margin_top = 552.0
+margin_right = 216.0
+margin_bottom = 567.0
+text = "Currently Unavailable :("
+align = 1
 autowrap = true
 
 [node name="Button" type="Button" parent="RightSidebar"]
-margin_top = 512.0
+margin_top = 504.0
 margin_right = 144.0
-margin_bottom = 539.0
+margin_bottom = 531.0
 rect_scale = Vector2( 1.5, 1.5 )
 text = "UPDATE DRIVETRAIN"
 

@@ -11,8 +11,3 @@ func _wire(x, _p):
 		$CheckButton.modulate = "00FF00"
 	else:
 		$CheckButton.modulate = "FF0000"
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

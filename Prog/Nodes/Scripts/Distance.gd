@@ -27,7 +27,7 @@ func convert_dist(length, unit_in, unit_out):
 
 
 func _wire(x, p):
-			A = x
+	A = x
 
 
 func updateOutput():

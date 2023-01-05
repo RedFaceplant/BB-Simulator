@@ -31,10 +31,5 @@ func flashPort(p):
 	updateOutput(false)
 
 
-func _input(ev):
-	if Input.is_key_pressed(keysArray[$OptionButton.selected]):
-		updateOutput(true)
-
-
 func _on_OptionButton_item_selected(_index):
 	pass

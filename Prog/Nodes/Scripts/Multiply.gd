@@ -27,6 +27,7 @@ func _wire(x, p):
 	updateOutput()
 
 
-#used to store the port number, therefore multiple signals can come from different ports.
+# used to store the port number, therefore multiple signals can come from different ports.
 func flashPort(p):
 	port = p
+	updateOutput()

@@ -11,10 +11,12 @@ var port
 func _ready():
 	pass # Replace with function body.
 
-func updateOutput():
 
-	#emit_signal("Wire", abs(A-B) < 0.0000001, port)
-	emit_signal("Wire", A < B, port)
+func updateOutput():
+	var output = A < B
+	emit_signal("Wire", output, port)
+
+
 func _wire(x, p):
 	match p:
 		0:
@@ -24,6 +26,7 @@ func _wire(x, p):
 		_:
 			return
 	updateOutput()
+
 
 #used to store the port number, therefore multiple signals can come from different ports.
 func flashPort(p):
