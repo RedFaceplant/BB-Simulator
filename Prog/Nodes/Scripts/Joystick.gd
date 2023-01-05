@@ -1,5 +1,6 @@
 extends GraphNode
-
+const type = "Joystick"
+export var data = {}
 signal Wire(x, p)
 var JoystickArray = ["LeftStickX", "LeftStickY", "RightStickX", "RightStickY"]
 
@@ -22,7 +23,7 @@ func updateSignal(value):
 # Used to store the port number, therefore multiple signals can come from different ports.
 func flashPort(p):
 	port = p
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if EnableJoystick:

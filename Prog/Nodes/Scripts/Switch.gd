@@ -1,5 +1,6 @@
 extends GraphNode
-
+const type = "Switch"
+export var data = {}
 signal Wire(x, p)
 
 var port
@@ -14,7 +15,7 @@ func _on_CheckButton_toggled(button_pressed):
 #used to store the port number, therefore multiple signals can come from different ports.
 func flashPort(p):
 	port = p
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	self.

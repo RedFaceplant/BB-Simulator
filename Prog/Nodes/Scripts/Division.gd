@@ -1,5 +1,6 @@
 extends GraphNode
-
+const type = "Division"
+export var data = {}
 signal Wire(x, p)
 
 var A = 0
@@ -33,7 +34,7 @@ func _wire(x, p):
 #used to store the port number, therefore multiple signals can come from different ports.
 func flashPort(p):
 	port = p
-
+	updateOutput()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	self.

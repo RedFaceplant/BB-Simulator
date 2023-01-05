@@ -1,4 +1,6 @@
 extends GraphNode
+const type = "Abs"
+export var data = {}
 
 signal Wire(x, p)
 

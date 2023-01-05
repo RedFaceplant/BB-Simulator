@@ -1,5 +1,6 @@
 extends GraphNode
-
+const type = "Ceiling"
+export var data = {}
 signal Wire(x, p)
 
 var A = 0
