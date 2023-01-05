@@ -4,7 +4,7 @@ signal TheVariables(value)
 signal PrintNewLine(text)
 
 const nodesLogic = ["AND", "OR", "NOT", "XOR", "Relay", "Equal To", "Greater Than", "Less Than", "SR Latch"]
-const nodesInput = ["Joystick", "Custom Value", "Switch", "Key Press", "Slider"]
+const nodesInput = ["Joystick", "Custom Value", "Switch", "Key Press", "Slider", "JS Button Press"]
 const nodesMath = ["Add", "Subtract", "Multiply", "Divide", "Abs", "Exponent", "Root", "Trigonometry", "Math Const", "Clamp", "Round"]
 const nodesDebug = ["Bulb", "Display", "Gauge", "Terminal Print"]
 const nodesConvert = ["Convert Angle", "ToBoolean", "ToFloat", "ToInteger", "ToString"]
