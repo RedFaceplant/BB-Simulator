@@ -15,9 +15,11 @@ func _ready():
 func flashPort(p):
 	port = p
 
+func updateOutput():
+	emit_signal("Wire", $HSlider.value, port)
 
 func _on_HSlider_value_changed(value):
-	emit_signal("Wire", value, port)
+	updateOutput()
 
 
 func _on_LineEdit_text_changed(new_text):
@@ -25,3 +27,7 @@ func _on_LineEdit_text_changed(new_text):
 	max_value = int($"Control2/Max".text)
 	$HSlider.min_value = min_value
 	$HSlider.max_value = max_value
+
+#slider does not have an input wire
+func _wire(x, _p):
+	updateOutput()
