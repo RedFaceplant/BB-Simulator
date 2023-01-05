@@ -1,5 +1,6 @@
 extends GraphNode
-
+const type = "ToInteger"
+export var data = {}
 signal Wire(x, p)
 
 var port
@@ -24,7 +25,7 @@ func updateOutput():
 #used to store the port number, therefore multiple signals can come from different ports.
 func flashPort(p):
 	port = p
-
+	updateOutput()
 
 func _on_CheckButton_text_changed(new_text):
 	output = new_text

@@ -1,5 +1,6 @@
 extends GraphNode
-
+const type = "Custom Text"
+export var data = {}
 signal Wire(x, p)
 
 var port

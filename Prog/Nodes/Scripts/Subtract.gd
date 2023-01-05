@@ -1,5 +1,6 @@
 extends GraphNode
-
+const type = "Subtract"
+export var data = {}
 signal Wire(x, p)
 
 var A = 0

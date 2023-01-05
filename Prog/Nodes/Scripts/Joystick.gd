@@ -1,5 +1,6 @@
 extends GraphNode
-
+const type = "Joystick"
+export var data = {
 signal Wire(x, p)
 var JoystickArray = ["LeftStickX", "LeftStickY", "RightStickX", "RightStickY"]
 

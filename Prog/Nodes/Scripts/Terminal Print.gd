@@ -1,5 +1,6 @@
 extends GraphNode
-
+const type = "Terminal Print"
+export var data = {}
 signal Print(text)
 
 

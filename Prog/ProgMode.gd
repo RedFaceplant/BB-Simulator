@@ -1,12 +1,13 @@
 extends Control
 
 signal TheVariables(value)
+signal Variables(value)
 signal PrintNewLine(text)
 
 const nodesLogic = ["AND", "OR", "NOT", "XOR", "Relay", "Equal To", "Greater Than", "Less Than", "SR Latch"]
-const nodesInput = ["Joystick", "Custom Value", "Switch", "Key Press", "Slider"]
+const nodesInput = ["Joystick", "Custom Value", "Switch", "Key Press", "Slider", "JS Button Press"]
 const nodesMath = ["Add", "Subtract", "Multiply", "Divide", "Abs", "Exponent", "Root", "Trigonometry", "Math Const", "Clamp", "Round", "Floor", "Ceiling"]
-const nodesDebug = ["Bulb", "Display", "Gauge", "Terminal Print", "Concat", "Custom Text"]
+const nodesDebug = ["Bulb", "Display", "Gauge", "Terminal Print", "Concat", "Custom Text", "DisplayVariableNode"]
 const nodesConvert = ["Convert Angle", "Distance", "ToBoolean", "ToFloat", "ToInteger", "ToString"]
 
 onready var button = load("res://Prog/SidebarNode.tscn")
@@ -47,10 +48,13 @@ func _motor(obj):
 	emit_signal("TheVariables", obj)
 
 
+func _displayVar(obj):
+	emit_signal("Variables", obj)
+
+
 func _print(text):
 	emit_signal("PrintNewLine", text)
 
 
-# Here for future use
 func _on_Build_drivetrainUpdate(_dt):
 	pass # Replace with function body.

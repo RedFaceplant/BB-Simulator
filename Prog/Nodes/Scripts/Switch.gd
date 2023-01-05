@@ -19,4 +19,3 @@ func _on_CheckButton_toggled(button_pressed):
 func flashPort(p):
 	port = p
 	emit_signal("Wire", $CheckButton.pressed, port)
-

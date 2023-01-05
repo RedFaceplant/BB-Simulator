@@ -1,5 +1,6 @@
 extends GraphNode
-
+const type = "Distance"
+export var data = {}
 signal Wire(x, p)
 const optionsArray = ["meter", "miles", "km", "mm", "cm", "feet", "inches"]
 

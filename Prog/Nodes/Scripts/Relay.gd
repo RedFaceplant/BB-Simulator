@@ -1,5 +1,6 @@
 extends GraphNode
-
+const type = "Relay"
+export var data = {}
 signal Wire(x, p)
 
 var Coil = false

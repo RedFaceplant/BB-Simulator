@@ -1,5 +1,6 @@
 extends GraphNode
-
+const type = "NOT"
+export var data = {}
 signal Wire(x, p)
 
 var A = false

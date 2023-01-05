@@ -1,5 +1,6 @@
 extends GraphNode
-
+const type = "Multiply"
+export var data = {}
 signal Wire(x, p)
 
 var A = 0

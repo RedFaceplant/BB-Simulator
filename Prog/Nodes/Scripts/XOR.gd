@@ -1,4 +1,6 @@
 extends GraphNode
+const type = "XOR"
+export var data = {}
 
 signal Wire(x, p)
 
@@ -29,6 +31,8 @@ func _wire(x, p):
 	updateOutput()
 
 
-#used to store the port number, therefore multiple signals can come from different ports.
+# Used to store the port number, therefore multiple signals can come from different ports.
 func flashPort(p):
 	port = p
+	updateOutput()
+

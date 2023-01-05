@@ -1,4 +1,6 @@
 extends GraphNode
+const type = "Convert Angle"
+export var data = {}
 
 signal Wire(x, p)
 
@@ -26,9 +28,10 @@ func updateOutput():
 	emit_signal("Wire", output, port)
 
 
-#used to store the port number, therefore multiple signals can come from different ports.
+# Used to store the port number, therefore multiple signals can come from different ports.
 func flashPort(p):
 	port = p
+	updateOutput()
 
 
 func _on_OptionButton_item_selected(index):
