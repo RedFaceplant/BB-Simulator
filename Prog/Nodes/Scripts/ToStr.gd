@@ -13,12 +13,13 @@ func _ready():
 
 
 func _wire(x, p):
-	output = x
+	A = x
 	updateOutput()
 
 
 func updateOutput():
-	emit_signal("Wire", str(output), port)
+	var output = str(A)
+	emit_signal("Wire", output, port)
 
 
 # Used to store the port number, therefore multiple signals can come from different ports.

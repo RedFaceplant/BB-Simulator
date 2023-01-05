@@ -46,6 +46,6 @@ margin_top = 32.0
 margin_right = 69.0
 margin_bottom = 46.0
 rect_scale = Vector2( 1.5, 1.5 )
-text = "Value"
+text = "99"
 align = 1
 clip_text = true

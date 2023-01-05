@@ -26,7 +26,7 @@ func _physics_process(_delta):
 	
 	var forwardForce = 0.0
 	var rotateForce = 0.0
-	var strafeForce = 0.0
+#	var strafeForce = 0.0 # Here for future use
 	
 	if enabled:
 		for m in motors:
@@ -40,7 +40,7 @@ func _physics_process(_delta):
 			"6W Tank":
 				forwardForce = (motors[0].Power + motors[1].Power)/2
 				rotateForce = (motors[0].Power - motors[1].Power)/32
-				strafeForce = 0.0
+#				strafeForce = 0.0 # Here for future use
 	
 	# Ground velocity
 	velocity.x = sin(self.rotation.y - PI/2) * forwardForce * speed

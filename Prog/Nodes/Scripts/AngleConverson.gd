@@ -1,6 +1,7 @@
 extends GraphNode
 const type = "Convert Angle"
 export var data = {}
+
 signal Wire(x, p)
 
 var port
@@ -15,17 +16,23 @@ func _ready():
 		$OptionButton.add_item(a, i)
 		i += 1
 
+
 func _wire(x, p):
 	A = x
 	updateOutput()
-	
+
+
 func updateOutput():
 	var stepAray = [deg2rad(A), rad2deg(A)]
 	output = stepAray[$OptionButton.selected]
 	emit_signal("Wire", output, port)
-#used to store the port number, therefore multiple signals can come from different ports.
+
+
+# Used to store the port number, therefore multiple signals can come from different ports.
 func flashPort(p):
 	port = p
 	updateOutput()
+
+
 func _on_OptionButton_item_selected(index):
 	updateOutput()

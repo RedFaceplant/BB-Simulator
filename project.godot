@@ -14,21 +14,10 @@ config/name="BB Robot Simulator"
 run/main_scene="res://Main.tscn"
 config/icon="res://Art/Byting Bulldogs Icon - Square (High Resolution) 2017-09-08.png"
 
-[autoload]
-
-PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
-IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
-UserData="*res://addons/github-integration/scripts/user_data.gd"
-RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
-
 [display]
 
 window/stretch/mode="2d"
 window/stretch/aspect="keep_width"
-
-[editor_plugins]
-
-enabled=PoolStringArray(  )
 
 [input]
 

@@ -1,6 +1,7 @@
 extends GraphNode
 const type = "XOR"
 export var data = {}
+
 signal Wire(x, p)
 
 var A
@@ -11,10 +12,13 @@ var port
 func _ready():
 	pass # Replace with function body.
 
+
 func updateOutput():
-	var Xor = A or B
+	var Or = A or B
 	var Both = A and B
-	emit_signal("Wire", Xor and not Both, port)
+	var output = Or and not Both
+	emit_signal("Wire", output, port)
+
 
 func _wire(x, p):
 	match p:
@@ -26,10 +30,9 @@ func _wire(x, p):
 			return
 	updateOutput()
 
-#used to store the port number, therefore multiple signals can come from different ports.
+
+# Used to store the port number, therefore multiple signals can come from different ports.
 func flashPort(p):
 	port = p
 	updateOutput()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	self.
+

@@ -14,7 +14,8 @@ func _ready():
 
 
 func updateOutput():
-	emit_signal("Wire", A + B, port)
+	var output = A + B
+	emit_signal("Wire", output, port)
 
 
 func _wire(x, p):
