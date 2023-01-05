@@ -40,3 +40,4 @@ visible = false
 [connection signal="drivetrainUpdate" from="TabContainer/Build" to="TabContainer/Run" method="_on_Build_drivetrainUpdate"]
 [connection signal="PrintNewLine" from="TabContainer/Program" to="TabContainer/Run" method="_on_Program_PrintNewLine"]
 [connection signal="TheVariables" from="TabContainer/Program" to="TabContainer/Run" method="_on_Program_TheVariables"]
+[connection signal="Variables" from="TabContainer/Program" to="TabContainer/Run" method="_on_Program_Variables"]
