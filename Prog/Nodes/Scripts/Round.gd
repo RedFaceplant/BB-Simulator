@@ -1,6 +1,7 @@
 extends GraphNode
 const type = "Round"
 export var data = {}
+
 signal Wire(x, p)
 const optionsArray = ["No Decimals", "Float 1", "Float 2", "Float 3", "Float 4", "Float 5"]
 const stepAray = [1,.1,.01,.001,.0001,.00001]

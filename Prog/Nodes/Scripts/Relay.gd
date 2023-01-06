@@ -1,6 +1,7 @@
 extends GraphNode
 const type = "Relay"
 export var data = {}
+
 signal Wire(x, p)
 
 var Coil = false
@@ -17,7 +18,7 @@ func updateOutput():
 	if Coil:
 		Out = Through
 	else:
-		Out = false
+		Out = null
 	emit_signal("Wire", Out, port)
 
 

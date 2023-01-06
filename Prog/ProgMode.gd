@@ -5,9 +5,9 @@ signal Variables(value)
 signal PrintNewLine(text)
 
 const nodesLogic = ["AND", "OR", "NOT", "XOR", "Relay", "Equal To", "Greater Than", "Less Than", "SR Latch"]
-const nodesInput = ["Joystick", "Custom Value", "Switch", "Key Press", "Slider", "JS Button Press"]
+const nodesInput = ["Joystick Axis", "JoyStick Button", "Key Press", "Switch", "Custom Value", "Custom Text", "Slider",]
 const nodesMath = ["Add", "Subtract", "Multiply", "Divide", "Abs", "Exponent", "Root", "Trigonometry", "Math Const", "Clamp", "Round", "Floor", "Ceiling"]
-const nodesDebug = ["Bulb", "Display", "Gauge", "Terminal Print", "Concat", "Custom Text", "DisplayVariableNode"]
+const nodesDebug = ["Bulb", "Display", "Gauge", "Terminal Print", "Concat", "Display Variable"]
 const nodesConvert = ["Convert Angle", "Distance", "ToBoolean", "ToFloat", "ToInteger", "ToString"]
 
 onready var button = load("res://Prog/SidebarNode.tscn")

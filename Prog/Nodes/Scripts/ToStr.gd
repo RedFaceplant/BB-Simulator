@@ -1,6 +1,7 @@
 extends GraphNode
 const type = "ToString"
 export var data = {}
+
 signal Wire(x, p)
 
 var port

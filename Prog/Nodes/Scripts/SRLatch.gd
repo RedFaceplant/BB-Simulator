@@ -1,6 +1,7 @@
 extends GraphNode
 const type = "SR Latch"
 export var data = {}
+
 signal Wire(x, p)
 
 var Set = false
@@ -8,7 +9,7 @@ var Reset = false
 var Out = false
 var port
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	updateOutput()
 
@@ -34,7 +35,7 @@ func _wire(x, p):
 	updateOutput()
 
 
-#used to store the port number, therefore multiple signals can come from different ports.
+# Used to store the port number, therefore multiple signals can come from different ports.
 func flashPort(p):
 	port = p
 	updateOutput()

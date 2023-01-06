@@ -1,6 +1,7 @@
 extends GraphNode
 const type = "OR"
 export var data = {}
+
 signal Wire(x, p)
 
 var A = 0
