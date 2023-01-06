@@ -1,6 +1,7 @@
 extends GraphNode
 const type = "Custom Value"
 export var data = {}
+
 signal Wire(x, p)
 
 var port

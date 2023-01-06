@@ -1,4 +1,7 @@
 extends GraphNode
+const type = "Joystick Button"
+export var data = {}
+
 
 signal Wire(x, p)
 const optionsArray = ["A", "B", "X", "Y","DP up", "DP Down", "DP Left", "DP Right","LT", "LB", "RT", "RB"]
@@ -20,10 +23,7 @@ func updateOutput(value):
 
 
 func _process(delta):
-	if Input.is_joy_button_pressed(0,buttonArray[$OptionButton.selected]):
-		updateOutput(true)
-	else:
-		updateOutput(false)
+	updateOutput( Input.is_joy_button_pressed(0,buttonArray[$OptionButton.selected]) )
 
 
 # Used to store the port number, therefore multiple signals can come from different ports.

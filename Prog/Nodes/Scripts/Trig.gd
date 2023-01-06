@@ -1,6 +1,7 @@
 extends GraphNode
 const type = "Trigonometry"
 export var data = {}
+
 signal Wire(x, p)
 const optionsArray = ["Sin", "Cos", "Tan", "Arcsin", "Arccos", "Arctan"]
 

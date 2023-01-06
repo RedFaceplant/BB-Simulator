@@ -1,6 +1,7 @@
 extends GraphNode
 const type = "Distance"
 export var data = {}
+
 signal Wire(x, p)
 const optionsArray = ["meter", "miles", "km", "mm", "cm", "feet", "inches"]
 
@@ -29,6 +30,7 @@ func convert_dist(length, unit_in, unit_out):
 
 func _wire(x, p):
 	A = x
+	updateOutput()
 
 
 func updateOutput():

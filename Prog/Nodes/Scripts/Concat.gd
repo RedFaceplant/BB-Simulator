@@ -1,6 +1,7 @@
 extends GraphNode
 const type = "Concat"
 export var data = {}
+
 signal Wire(x, p)
 
 var A = "Two"

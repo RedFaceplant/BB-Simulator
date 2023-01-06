@@ -1,7 +1,10 @@
 extends Control
 
 signal incoming_motors
-signal incoming_variables
+var displayVars = []
+
+onready var DisplayThing = load("res://Run/DisplayVariable.tscn")
+onready var Hbox = $DriverStation/HBoxContainer
 
 func _ready():
 	pass
@@ -11,9 +14,19 @@ func _on_Program_TheVariables(value):
 	emit_signal("incoming_motors", value)
 	
   
-func _on_Program_Variables(value):
-	#emit_signal("incoming_variables", value)
-	print(value)
+func _on_Program_Variables(newVar):
+	if not newVar.varName in displayVars:
+		var newDisplay = DisplayThing.instance()
+		Hbox.add_child(newDisplay)
+		newDisplay.setUp(newVar.varName, newVar.value)
+		displayVars.append(newVar.varName)
+	else:
+		Hbox.get_child( displayVars.find(newVar.varName)+2 ).updateValue(newVar.value)
+
+
+func deleteVar(namex):
+	Hbox.get_child( displayVars.find(namex)+2 ).queue_free()
+	displayVars.erase(namex)
 
 
 func _on_Program_PrintNewLine(text):

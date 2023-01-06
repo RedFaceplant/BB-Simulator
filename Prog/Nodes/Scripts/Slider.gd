@@ -1,6 +1,7 @@
 extends GraphNode
 const type = "Slider"
 export var data = {}
+
 signal Wire(x, p)
 
 var port
@@ -12,12 +13,15 @@ func _ready():
 	pass # Replace with function body.
 
 
-#used to store the port number, therefore multiple signals can come from different ports.
+# Used to store the port number, therefore multiple signals can come from different ports.
 func flashPort(p):
 	port = p
+	updateOutput()
+
 
 func updateOutput():
 	emit_signal("Wire", $HSlider.value, port)
+
 
 func _on_HSlider_value_changed(value):
 	updateOutput()
@@ -29,6 +33,8 @@ func _on_LineEdit_text_changed(new_text):
 	$HSlider.min_value = min_value
 	$HSlider.max_value = max_value
 
-#slider does not have an input wire
-func _wire(x, _p):
-	updateOutput()
+
+# Verify, but I dont think this needs to be here
+## Slider does not have an input wire
+#func _wire(x, _p):
+#	updateOutput()
